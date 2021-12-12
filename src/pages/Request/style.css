@@ -1,0 +1,117 @@
+.request-screen{
+  justify-content: space-around;
+}
+
+.request-pon{
+  font-size: 2.5rem;
+  color: #fff;
+}
+
+.progressbar{
+  font-family: Roboto;
+  display: flex;
+  width: 400px;
+  padding-right: 4%; /* Gambiarra para não cortar a progressive bar em alguns mobiles */
+}
+
+.progressbar li{
+  position: relative;
+  color: var(--dark-gray);
+  width: 33%;
+  text-align: center;
+  transition: all var(--bg-status-transition-time);
+  list-style: none;
+}
+.progressbar li:before{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  content: attr(data-step);
+
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+
+  background-color: var(--white);
+  color: var(--dark-grey);
+
+  position: absolute;
+  top: -50px;
+  left: calc(50% - 20px);
+  z-index: 1;
+  
+  transition: background-color var(--bg-status-transition-time);
+}
+.progressbar li:after{
+  content: '';
+  width: 100%;
+  height: 5px;
+  background-color: var(--white);
+
+  position: absolute;
+  top: -35px;
+  left: -50%;
+  
+  transition: background-color var(--bg-status-transition-time);
+}
+.progressbar li:first-child:after{
+  width: 0;
+}
+
+.active{
+  color: var(--dark-gray) !important;
+}
+.active:before{
+  background: var(--dark-gray) !important;
+  color: var(--white) !important;
+}
+.active:after{
+  background: var(--dark-gray) !important;
+}
+
+.finished{
+  color: var(--green)  !important;
+}
+.finished:before{
+  background: var(--green)  !important;
+  color: var(--white)  !important;
+}
+.finished:after{
+  background: var(--green)  !important;
+}
+
+.denied{
+  color: var(--red) !important;
+}
+.denied:before{
+  background: var(--red) !important;
+  color: var(--white) !important;
+}
+.denied:after{
+  background: var(--red) !important;
+}
+
+.request-denied-actions{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.request-reason{
+  color: #fff;
+  font-size: 1.3rem;
+  text-align: justify;
+  padding: 0 15px;
+  margin-bottom: 15px;
+}
+
+.request-delete-btn{
+  width: fit-content;
+  padding: 12px 20px;
+  background-color: #fff;
+  border: none;
+  border-radius: 5px;
+  font-family: Roboto;
+  font-weight: 700;
+}
